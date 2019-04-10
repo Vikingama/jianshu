@@ -1,8 +1,13 @@
-import React, { Component } from "react";
+import React, { Component ,Fragment} from "react";
+import Header from "./common/header";
 
 class Jianshu extends Component {
     render() {
-        return <div>Jianshu</div>;
+        return (
+            <Fragment>
+                <Header />
+            </Fragment>
+        );
     }
 }
 
