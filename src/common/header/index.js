@@ -19,10 +19,10 @@ class Header extends Component {
                     <NavItem className="right">登录</NavItem>
                     <NavItem className="right">Aa</NavItem>
                     <SearchBar />
-                    <Addition>
-                        <span>注册</span>/<span>写文章</span>
-                    </Addition>
                 </Nav>
+                <Addition>
+                    <span>注册</span>/<span>写文章</span>
+                </Addition>
             </HeaderWrapper>
         );
     }

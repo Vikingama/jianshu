@@ -4,6 +4,7 @@ import logo from "../../statics/logo.png";
 // HeaderWrapper 此时就是一个带样式的 div...
 export const HeaderWrapper = styled.div`
     position: relative;
+    min-width: 900px;
     height: 56px;
     border-bottom: 1px solid #f0f0f0;
 `;
@@ -18,19 +19,20 @@ export const Logo = styled.a`
     background-size: 100% 100%;
 `;
 export const Nav = styled.div`
+    float: left;
     margin: 0 auto;
     padding: 0 100px;
     width: 80%;
-    min-width: 700px;
+    min-width: 770px;
     box-sizing: border-box;
     /* 通过伪元素清浮动，如果父元素不清浮动会引起内容塌陷，快忘完了 */
-    ::after {
+    /* ::after {
         clear: both;
         content: "";
         display: block;
         width: 0;
         height: 0;
-    }
+    } */
 `;
 export const NavItem = styled.span`
     padding: 0 15px;
@@ -73,9 +75,7 @@ export const SearchBar = styled.input.attrs({
     }
 `;
 export const Addition = styled.div`
-    position: absolute;
-    top: 0;
-    right: 0;
+    float: right;
     width: 130px;
     height: 56px;
     line-height: 56px;
