@@ -19,20 +19,23 @@ export const Logo = styled.a`
     background-size: 100% 100%;
 `;
 export const Nav = styled.div`
-    float: left;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     margin: 0 auto;
     padding: 0 100px;
     width: 80%;
     min-width: 770px;
     box-sizing: border-box;
     /* 通过伪元素清浮动，如果父元素不清浮动会引起内容塌陷，快忘完了 */
-    /* ::after {
+    ::after {
         clear: both;
         content: "";
         display: block;
         width: 0;
         height: 0;
-    } */
+    }
 `;
 export const NavItem = styled.span`
     padding: 0 15px;
@@ -75,7 +78,9 @@ export const SearchBar = styled.input.attrs({
     }
 `;
 export const Addition = styled.div`
-    float: right;
+    position: absolute;
+    top: 0;
+    right: 0;
     width: 130px;
     height: 56px;
     line-height: 56px;
@@ -85,4 +90,39 @@ export const Addition = styled.div`
         color: rgb(217, 118, 97);
         cursor: pointer;
     }
+`;
+export const SearchInfo = styled.div`
+    position: absolute;
+    top: 58px;
+    left: 300px;
+    padding: 15px;
+    width: 234px;
+    border-radius: 5px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+`;
+export const SearchControl = styled.button`
+    float: right;
+    margin: 0;
+    padding: 0;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    outline: none;
+`;
+export const SearchUl = styled.ul`
+    margin: 0 0 -8px 0;
+    padding: 18px 0 0 0;
+    width: 100%;
+    list-style: none;
+`;
+export const SearchLi = styled.li`
+    display: inline-block;
+    margin: 0 8px 8px 0;
+    padding: 2px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    color: #787878;
+    cursor: pointer;
+    font-size: 8px;
 `;
