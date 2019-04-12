@@ -12,15 +12,22 @@ import {
     SearchUl,
     SearchLi
 } from "./style";
-import { handleInputFocus, handleInputBlur } from "./actionCreator";
+import {
+    handleInputFocus,
+    handleInputBlur,
+    getTrendsList
+} from "./actionCreator";
 
-const getListArea = show => {
-    if (show) {
+const getListArea = props => {
+    const { focused, trends } = props;
+    if (focused) {
         return (
             <SearchInfo>
                 <SearchControl>换一换</SearchControl>
                 <SearchUl>
-                    <SearchLi>1234</SearchLi>
+                    {trends.map((item, index) => (
+                        <SearchLi key={index}>{item}</SearchLi>
+                    ))}
                 </SearchUl>
             </SearchInfo>
         );
@@ -43,7 +50,7 @@ class Header extends Component {
                         onFocus={this.props.handleInputFocus}
                         onBlur={this.props.handleInputBlur}
                     />
-                    {getListArea(this.props.focused)}
+                    {getListArea(this.props)}
                 </Nav>
                 <Addition>
                     <span>注册</span>/<span>写文章</span>
@@ -55,12 +62,14 @@ class Header extends Component {
 
 const mapStateToProps = state => {
     return {
-        focused: state.getIn(["header", "focused"])
+        focused: state.getIn(["header", "focused"]),
+        trends: state.getIn(["header", "trends"])
     };
 };
 const mapDispatchToProps = dispatch => {
     return {
         handleInputFocus() {
+            dispatch(getTrendsList());
             dispatch(handleInputFocus());
         },
         handleInputBlur() {

@@ -112,7 +112,7 @@ export const SearchControl = styled.button`
 `;
 export const SearchUl = styled.ul`
     margin: 0 0 -8px 0;
-    padding: 18px 0 0 0;
+    padding: 28px 0 0 0;
     width: 100%;
     list-style: none;
 `;
