@@ -1,6 +1,19 @@
-import { searchbar_focus, searchbar_blur, get_trends } from "./actionType";
+import {
+    searchbar_focus,
+    searchbar_blur,
+    get_trends,
+    mouse_enter,
+    mouse_leave,
+    change_trends
+} from "./actionType";
 import axios from "axios";
 import { fromJS } from "immutable";
+
+const send_trends = data => ({
+    type: get_trends,
+    trends: fromJS(data),
+    totalPage: Math.ceil(data.length) / 10
+});
 
 export const handleInputFocus = () => ({
     type: searchbar_focus
@@ -8,12 +21,6 @@ export const handleInputFocus = () => ({
 export const handleInputBlur = () => ({
     type: searchbar_blur
 });
-
-const send_trends = data => ({
-    type: get_trends,
-    payload: fromJS(data)
-});
-
 export const getTrendsList = () => {
     return dispatch => {
         axios
@@ -30,3 +37,13 @@ export const getTrendsList = () => {
             });
     };
 };
+export const handleMouseEnter = () => ({
+    type: mouse_enter
+});
+export const handleMouseLeave = () => ({
+    type: mouse_leave
+});
+export const changeTrends = page => ({
+    type: change_trends,
+    page
+});
