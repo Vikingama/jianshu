@@ -1,3 +1,5 @@
+import axios from "axios";
+import { fromJS } from "immutable";
 import {
     searchbar_focus,
     searchbar_blur,
@@ -6,8 +8,6 @@ import {
     mouse_leave,
     change_trends
 } from "./actionType";
-import axios from "axios";
-import { fromJS } from "immutable";
 
 const send_trends = data => ({
     type: get_trends,

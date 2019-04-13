@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-// import { toJS } from "immutable";
 import {
     HeaderWrapper,
     Logo,
@@ -21,6 +20,32 @@ import {
     handleMouseLeave,
     changeTrends
 } from "./actionCreator";
+
+class Header extends Component {
+    render() {
+        return (
+            <HeaderWrapper>
+                <Logo href="/" />
+                <Nav>
+                    <NavItem className="left active">首页</NavItem>
+                    <NavItem className="left">下载 APP</NavItem>
+                    <NavItem className="right">登录</NavItem>
+                    <NavItem className="right">Aa</NavItem>
+                    <SearchBar
+                        onFocus={() => {
+                            this.props.handleInputFocus(this.props.trends);
+                        }}
+                        onBlur={this.props.handleInputBlur}
+                    />
+                    {getListArea(this.props)}
+                </Nav>
+                <Addition>
+                    <span>注册</span>/<span>写文章</span>
+                </Addition>
+            </HeaderWrapper>
+        );
+    }
+}
 
 const getListArea = props => {
     const {
@@ -67,31 +92,6 @@ const getListArea = props => {
         return null;
     }
 };
-
-class Header extends Component {
-    render() {
-        return (
-            <HeaderWrapper>
-                <Logo href="/" />
-                <Nav>
-                    <NavItem className="left active">首页</NavItem>
-                    <NavItem className="left">下载 APP</NavItem>
-                    <NavItem className="right">登录</NavItem>
-                    <NavItem className="right">Aa</NavItem>
-                    <SearchBar
-                        onFocus={this.props.handleInputFocus}
-                        onBlur={this.props.handleInputBlur}
-                    />
-                    {getListArea(this.props)}
-                </Nav>
-                <Addition>
-                    <span>注册</span>/<span>写文章</span>
-                </Addition>
-            </HeaderWrapper>
-        );
-    }
-}
-
 const mapStateToProps = state => {
     return {
         focused: state.getIn(["header", "focused"]),
@@ -100,11 +100,11 @@ const mapStateToProps = state => {
         totalPage: state.getIn(["header", "totalPage"]),
         mouseIn: state.getIn(["header", "mouseIn"])
     };
-};
+}; 
 const mapDispatchToProps = dispatch => {
     return {
-        handleInputFocus() {
-            dispatch(getTrendsList());
+        handleInputFocus(trends) {
+            trends.size === 0 && dispatch(getTrendsList());
             dispatch(handleInputFocus());
         },
         handleInputBlur() {
