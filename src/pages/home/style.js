@@ -15,7 +15,7 @@ export const HomeLeft = styled.div`
     .banner-img {
         width: 625px;
         height: 270px;
-        border-radius:3px;
+        border-radius: 3px;
         vertical-align: top;
     }
 `;
@@ -123,4 +123,21 @@ export const WriterWrapper = styled.div`
     border-radius: 3px;
     line-height: 198px;
     text-align: center;
+`;
+export const BackTop = styled.div`
+    position: fixed;
+    bottom: 58px;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 60px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 `;
