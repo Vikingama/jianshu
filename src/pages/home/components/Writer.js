@@ -3,7 +3,9 @@ import { WriterWrapper } from "../style";
 
 class Writer extends Component {
     render() {
-        return <WriterWrapper>Writer</WriterWrapper>;
+        return <WriterWrapper>
+            to be continued...
+        </WriterWrapper>;
     }
 }
 

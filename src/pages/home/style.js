@@ -15,6 +15,7 @@ export const HomeLeft = styled.div`
     .banner-img {
         width: 625px;
         height: 270px;
+        border-radius:3px;
         vertical-align: top;
     }
 `;
