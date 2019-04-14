@@ -113,9 +113,13 @@ export const RecommendItem = styled.div`
 `;
 export const WriterWrapper = styled.div`
     width: 278px;
-    height: 300px;
+    height: 198px;
+    background-image: url(${recommend});
+    background-position: 0 -250px;
+    background-repeat: no-repeat;
+    background-size: cover;
     border: 1px solid #dcdcdc;
     border-radius: 3px;
-    line-height: 300px;
+    line-height: 198px;
     text-align: center;
 `;
