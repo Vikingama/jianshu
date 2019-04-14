@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { HomeWrapper, HomeLeft, HomeRight, BackTop } from "./style";
 import { enableBackTop, disableBackTop } from "./actionCreator";
@@ -26,7 +27,32 @@ class Home extends PureComponent {
         const jsx = function() {
             let jsx = [];
             for (let i = 0; i < 7; i++) {
-                jsx.push(<ListItem key={i} />);
+                if (i === 6) {
+                    jsx.push(
+                        <Link
+                            to="detail"
+                            style={{
+                                display: "block"
+                            }}
+                            key={i}
+                        >
+                            <ListItem key={i} />
+                        </Link>
+                    );
+                } else {
+                    jsx.push(
+                        <Link
+                            to="detail"
+                            style={{
+                                display: "block",
+                                borderBottom: "1px solid #dcdcdc"
+                            }}
+                            key={i}
+                        >
+                            <ListItem key={i} />
+                        </Link>
+                    );
+                }
             }
             return jsx;
         };

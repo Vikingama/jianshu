@@ -48,11 +48,7 @@ export const TopicItem = styled.div`
 `;
 export const ItemWrapper = styled.div`
     padding: 20px 0;
-    border-bottom: 1px solid #dcdcdc;
     overflow: hidden;
-    &:last-of-type {
-        border-bottom: none;
-    }
     .item-img {
         float: right;
         display: block;

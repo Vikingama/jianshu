@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import {
     HeaderWrapper,
@@ -25,7 +26,9 @@ class Header extends PureComponent {
     render() {
         return (
             <HeaderWrapper>
-                <Logo />
+                <Link to="/">
+                    <Logo />
+                </Link>
                 <Nav>
                     <NavItem className="left active">首页</NavItem>
                     <NavItem className="left">下载 APP</NavItem>
