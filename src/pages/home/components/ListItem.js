@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { ItemWrapper, ItemInfo } from "../style";
 import item from "../../../statics/item.jpg";
 
-class ListItem extends Component {
+class ListItem extends PureComponent {
     render() {
         return (
             <ItemWrapper>

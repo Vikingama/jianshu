@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { TopicWrapper, TopicItem } from "../style";
 import topic from "../../../statics/topic.gif";
 
-class Topic extends Component {
+class Topic extends PureComponent {
     render() {
         const jsx = function() {
             let jsx = [];

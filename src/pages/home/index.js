@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 import { HomeWrapper, HomeLeft, HomeRight, BackTop } from "./style";
 import { enableBackTop, disableBackTop } from "./actionCreator";
@@ -8,7 +8,7 @@ import Topic from "./components/Topic";
 import Writer from "./components/Writer";
 import banner from "./../../statics/banner.jpg";
 
-class Home extends Component {
+class Home extends PureComponent {
     handleBackTop = () => {
         window.scrollTo(0, 0);
     };

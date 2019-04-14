@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 import { connect } from "react-redux";
 import {
     HeaderWrapper,
@@ -21,11 +21,11 @@ import {
     changeTrends
 } from "./actionCreator";
 
-class Header extends Component {
+class Header extends PureComponent {
     render() {
         return (
             <HeaderWrapper>
-                <Logo href="/" />
+                <Logo />
                 <Nav>
                     <NavItem className="left active">首页</NavItem>
                     <NavItem className="left">下载 APP</NavItem>
@@ -100,7 +100,7 @@ const mapStateToProps = state => {
         totalPage: state.getIn(["header", "totalPage"]),
         mouseIn: state.getIn(["header", "mouseIn"])
     };
-}; 
+};
 const mapDispatchToProps = dispatch => {
     return {
         handleInputFocus(trends) {
