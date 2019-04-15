@@ -24,7 +24,7 @@ export const handleInputBlur = () => ({
 export const getTrendsList = () => {
     return dispatch => {
         axios
-            .get("./api/trends.json")
+            .get("/api/trends.json")
             .then(res => {
                 if (res.data.success === true) {
                     dispatch(send_trends(res.data.data));

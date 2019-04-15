@@ -30,7 +30,7 @@ class Home extends PureComponent {
                 if (i === 6) {
                     jsx.push(
                         <Link
-                            to="detail"
+                            to={"detail/" + i}
                             style={{
                                 display: "block"
                             }}
@@ -42,7 +42,7 @@ class Home extends PureComponent {
                 } else {
                     jsx.push(
                         <Link
-                            to="detail"
+                            to={"detail/" + i}
                             style={{
                                 display: "block",
                                 borderBottom: "1px solid #dcdcdc"
