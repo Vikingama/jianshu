@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./common/header";
-import Home from "./pages/home";
-import Detail from "./pages/detail";
-import Login from "./pages/login";
-import Write from "./pages/write";
-import NotFound from "./pages/notFound";
+import Home from "./pages/home/loadable.js";
+import Detail from "./pages/detail/loadable.js";
+import Login from "./pages/login/loadable.js";
+import Write from "./pages/write/loadable.js";
+import NotFound from "./pages/notFound/loadable.js";
 
 class Jianshu extends Component {
     render() {

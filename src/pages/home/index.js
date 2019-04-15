@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { Link } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { HomeWrapper, HomeLeft, HomeRight, BackTop } from "./style";
 import { enableBackTop, disableBackTop } from "./actionCreator";
@@ -98,4 +98,4 @@ const mapDispatch = dispatch => ({
 export default connect(
     mapState,
     mapDispatch
-)(Home);
+)(withRouter(Home));

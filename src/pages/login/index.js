@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { Redirect } from "react-router-dom";
+import { withRouter, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import {
     LoginBackground,
@@ -71,4 +71,5 @@ const mapDispatch = dispatch => ({
 export default connect(
     mapState,
     mapDispatch
-)(Login);
+    // 使用 react-loadable 包装之后，组件不能正确的的获取路由参数，需要使用 withRouter 包装一下
+)(withRouter(Login));

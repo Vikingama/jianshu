@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { Redirect } from "react-router-dom";
+import { withRouter, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 
 class Write extends PureComponent {
@@ -32,4 +32,4 @@ const mapState = state => ({
 export default connect(
     mapState,
     null
-)(Write);
+)(withRouter(Write));

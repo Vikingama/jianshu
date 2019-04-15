@@ -1,6 +1,6 @@
-import React, { PureComponent } from "react";
-import { withRouter } from "react-router-dom";
-class NotFound extends PureComponent {
+import React, { Component } from "react";
+
+class Loading extends Component {
     render() {
         return (
             <div
@@ -13,10 +13,10 @@ class NotFound extends PureComponent {
                     textAlign: "center"
                 }}
             >
-                @.@...
+                ...
             </div>
         );
     }
 }
 
-export default withRouter(NotFound);
+export default Loading;

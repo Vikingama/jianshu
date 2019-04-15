@@ -1,4 +1,5 @@
 import React, { PureComponent } from "react";
+import { withRouter } from "react-router-dom";
 import { DetailWrapper, DetailHeader, DetailContent } from "./style";
 import content from "../../statics/content.jpg";
 
@@ -24,4 +25,4 @@ class Detail extends PureComponent {
     }
 }
 
-export default Detail;
+export default withRouter(Detail);
