@@ -6,6 +6,7 @@ export const HeaderWrapper = styled.div`
     position: relative;
     min-width: 900px;
     height: 56px;
+    background: #fff;
     border-bottom: 1px solid #f0f0f0;
 `;
 export const Logo = styled.div`
@@ -97,7 +98,7 @@ export const SearchInfo = styled.div`
     left: 300px;
     padding: 15px;
     width: 234px;
-    background:#fff;
+    background: #fff;
     border-radius: 5px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;

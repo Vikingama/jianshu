@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent, Fragment } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import {
@@ -21,6 +21,7 @@ import {
     handleMouseLeave,
     changeTrends
 } from "./actionCreator";
+import { handleUserLogout } from "../../pages/login/actionCreator";
 
 class Header extends PureComponent {
     render() {
@@ -30,9 +31,22 @@ class Header extends PureComponent {
                     <Logo />
                 </Link>
                 <Nav>
-                    <NavItem className="left active">首页</NavItem>
+                    <Link to="/">
+                        <NavItem className="left active">首页</NavItem>
+                    </Link>
                     <NavItem className="left">下载 APP</NavItem>
-                    <NavItem className="right">登录</NavItem>
+                    {this.props.loginSatus ? (
+                        <NavItem
+                            className="right"
+                            onClick={this.props.handleLogout}
+                        >
+                            退出
+                        </NavItem>
+                    ) : (
+                        <Link to="/login">
+                            <NavItem className="right">登录</NavItem>
+                        </Link>
+                    )}
                     <NavItem className="right">Aa</NavItem>
                     <SearchBar
                         onFocus={() => {
@@ -43,7 +57,18 @@ class Header extends PureComponent {
                     {getListArea(this.props)}
                 </Nav>
                 <Addition>
-                    <span>注册</span>/<span>写文章</span>
+                    {this.props.loginSatus ? (
+                        <Link to="/write">
+                            <span>写文章</span>
+                        </Link>
+                    ) : (
+                        <Fragment>
+                            <span>注册</span>
+                            <Link to="/write">
+                                <span>写文章</span>
+                            </Link>
+                        </Fragment>
+                    )}
                 </Addition>
             </HeaderWrapper>
         );
@@ -101,7 +126,8 @@ const mapStateToProps = state => {
         trends: state.getIn(["header", "trends"]),
         page: state.getIn(["header", "page"]),
         totalPage: state.getIn(["header", "totalPage"]),
-        mouseIn: state.getIn(["header", "mouseIn"])
+        mouseIn: state.getIn(["header", "mouseIn"]),
+        loginSatus: state.getIn(["login", "login"])
     };
 };
 const mapDispatchToProps = dispatch => {
@@ -126,6 +152,9 @@ const mapDispatchToProps = dispatch => {
                 page = page + 1;
             }
             dispatch(changeTrends(page));
+        },
+        handleLogout() {
+            dispatch(handleUserLogout());
         }
     };
 };
