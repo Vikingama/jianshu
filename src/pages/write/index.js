@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { withRouter, Redirect } from "react-router-dom";
+import { Redirect, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 
 class Write extends PureComponent {

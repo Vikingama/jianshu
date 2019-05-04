@@ -6,7 +6,7 @@ import { GlobalStyle } from "./style";
 import { store } from "./store";
 
 ReactDOM.render(
-    <Provider store={store}>
+    <Provider store={ store }>
         <Fragment>
             <GlobalStyle />
             <Jianshu />

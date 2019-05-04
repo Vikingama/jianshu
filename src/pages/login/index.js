@@ -68,6 +68,7 @@ const mapDispatch = dispatch => ({
     }
 });
 
+// 如果某些组件依赖于路由的更新要重新渲染，可以用 withRouter 包裹 connect...
 export default connect(
     mapState,
     mapDispatch

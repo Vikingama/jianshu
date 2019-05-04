@@ -1,4 +1,4 @@
-import { fromJS } from "immutable"; // 这个方法可以讲 JS 对象转换为 immutable 对象
+import { fromJS } from "immutable"; // 这个方法可以将 JS 对象转换为 immutable 对象
 import {
     searchbar_focus,
     searchbar_blur,

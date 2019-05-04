@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { withRouter, Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { HomeWrapper, HomeLeft, HomeRight, BackTop } from "./style";
 import { enableBackTop, disableBackTop } from "./actionCreator";
@@ -10,13 +10,29 @@ import Writer from "./components/Writer";
 import banner from "../../statics/banner.jpg";
 
 class Home extends PureComponent {
+    requestAnimation = () => {
+        let scrollTop = document.documentElement.scrollTop,raf;
+        if(scrollTop>0){
+            document.documentElement.scrollTop = document.documentElement.scrollTop - (scrollTop / 10)
+            raf = requestAnimationFrame(this.requestAnimation);
+        }else{
+            cancelAnimationFrame(raf);
+        }
+    }
     handleBackTop = () => {
-        window.scrollTo(0, 0);
+        // let scrollTop = document.documentElement.scrollTop;
+        // let interval = setInterval(() => {
+        //     document.documentElement.scrollTop = document.documentElement.scrollTop - (scrollTop / 10);
+        //     if (document.documentElement.scrollTop === 0) {
+        //         clearInterval(interval);
+        //     }
+        // }, 30);
+        this.requestAnimation();
     };
     componentDidMount() {
         window.addEventListener("scroll", this.props.changeBackTopShow, false);
     }
-    componentWillMount() {
+    componentWillUnmount() {
         window.removeEventListener(
             "scroll",
             this.props.changeBackTopShow,

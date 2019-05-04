@@ -5,11 +5,12 @@ import content from "../../statics/content.jpg";
 
 class Detail extends PureComponent {
     render() {
+        console.log(this.props);
         return (
             <DetailWrapper>
                 <DetailHeader>一个小城姑娘的上海十年</DetailHeader>
                 <DetailContent>
-                    <img className="content-img" src={content} alt="content" />
+                    <img className="content-img" src={ content } alt="content" />
                     <p>
                         走出办公室，已经是晚上十点，白天人声鼎沸的南京西路早已行人稀疏。深夜的热闹属于几百米外的张园和铜仁路酒吧，属于三公里外的新天地和衡山路。
                     </p>
