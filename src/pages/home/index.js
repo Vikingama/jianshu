@@ -7,7 +7,7 @@ import ListItem from "./components/ListItem";
 import Recommend from "./components/Recommend";
 import Topic from "./components/Topic";
 import Writer from "./components/Writer";
-import banner from "./../../statics/banner.jpg";
+import banner from "../../statics/banner.jpg";
 
 class Home extends PureComponent {
     handleBackTop = () => {
