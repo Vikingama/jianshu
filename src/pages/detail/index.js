@@ -5,7 +5,6 @@ import content from "../../statics/content.jpg";
 
 class Detail extends PureComponent {
     render() {
-        console.log(this.props);
         return (
             <DetailWrapper>
                 <DetailHeader>一个小城姑娘的上海十年</DetailHeader>

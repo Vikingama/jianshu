@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react";
 import { withRouter } from "react-router-dom";
+
 class NotFound extends PureComponent {
     render() {
         return (
