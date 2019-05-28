@@ -11,8 +11,8 @@ import banner from "../../statics/banner.jpg";
 
 class Home extends PureComponent {
     requestAnimation = () => {
-        let scrollTop = document.documentElement.scrollTop,raf;
-        if (scrollTop>0) {
+        let scrollTop = document.documentElement.scrollTop, raf;
+        if (scrollTop > 0) {
             document.documentElement.scrollTop = document.documentElement.scrollTop - (scrollTop / 10)
             raf = requestAnimationFrame(this.requestAnimation);
         } else {
